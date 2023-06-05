@@ -404,6 +404,222 @@ switch (grade) {
         break;
 }
 
+console.log("first question");
+console.log("first data");
+let markWeight1 = 78;
+let markHeight1 = 1.69;
+let johnWeight1 = 92;
+let johnHeight1 = 1.95;
+
+let markBMI1 = markWeight1/ (markHeight1 **2)
+let johnBMI1 = johnWeight1/ (johnHeight1 **2)
+let markHigherBMI1 = markBMI1 > johnBMI1;
+
+
+console.log(`Mark's BMI: ${markBMI1}`);
+console.log(`john's BMI: ${johnBMI1}`);
+console.log("john have higher BMI than mark: " + markHigherBMI1);
+
+let markWeight2 = 95;
+let markHeight2 = 1.88;
+let johnWeight2 = 85;
+let johnHeight2 = 1.76;
+
+let markBMI2 = markWeight1/(markHeight1 ** 2)
+let johnBMI2 = johnWeight1/(johnHeight1 ** 2)
+let markHigherBMI2 = markBMI2 > johnBMI2;
+
+console.log("second data");
+console.log("Mark's BMI: " + markBMI2);
+console.log("John's BMI: " + johnBMI2);
+console.log("Mark has a higher BMI than John: " + markHigherBMI2);
+
+
+console.log("second question");
+const markWeight = 80; 
+const markHeight = 1.8;
+
+const johnWeight = 75; 
+const johnHeight = 1.75;
+
+const markBMI = markWeight / (markHeight * markHeight);
+const johnBMI = johnWeight / (johnHeight * johnHeight);
+
+if (markBMI > johnBMI) {
+  console.log(`Mark's BMI (${markBMI}) is higher than John's (${johnBMI})!`);
+} else if (johnBMI > markBMI) {
+  console.log(`John's BMI (${johnBMI}) is higher than Mark's (${markBMI})!`);
+} else {
+  console.log("Both Mark and John have the same BMI!");
+}
+
+
+
+// const dolphinsScores = [96, 108, 89];
+// const koalasScores = [88, 91, 110];
+
+
+// let dolphinsTotalScore = 0;
+// for (let i = 0; i < dolphinsScores.length; i++) {
+//   dolphinsTotalScore += dolphinsScores[i];
+// }
+// const dolphinsAverageScore = dolphinsTotalScore / dolphinsScores.length;
+
+
+// let koalasTotalScore = 0;
+// for (let i = 0; i < koalasScores.length; i++) {
+//   koalasTotalScore += koalasScores[i];
+// }
+// const koalasAverageScore = koalasTotalScore / koalasScores.length;
+
+
+// if (dolphinsAverageScore > koalasAverageScore) {
+//   console.log(`Dolphins win with  ${dolphinsAverageScore}!`);
+// } else if (koalasAverageScore > dolphinsAverageScore) {
+//   console.log(`Koalas win with  ${koalasAverageScore}!`);
+// } else {
+//   console.log(`Both teams are same score ${dolphinsAverageScore}, it's a draw!`);
+// }
+
+// const avgDolphin = (96 + 108 + 89) / 3;
+// const avgKoala = (88 + 96 + 110) / 3;
+
+// console.log(avgDolphin, avgKoala);
+// if (avgDolphin > ){console.log();}
+
+
+//ternary operator - condition ? action 1 : action 2
+// 15 > 7 ? console.log("yes") : console.log("no");
+
+// const fig2 = 47
+// fig2 % 2 === 0 ? console.log("odd number") : console.log("even number");
+
+//loops - repitive task : for, while,do,,while loop
+//for (initializer let i = 0; condition i< 5; increment i++){code}
+// for (let i = 0; i < 10; i++){
+//     console.log(`in the loop ${i}`);
+// }
+// console.log("outside of the loop");
+//sum of
+// let sum = 0
+// for (i = 0; i <= 100; i++){ sum += 1 }
+// console.log(sum);
+//while loop(condition){code increment}
+// let x = 0;
+// while (x < 20) {
+//     console.log("HELLO");
+//     x++;
+// }
+
+
+
+//functions -functio declaration
+//function  declaration
+function myfunction() {
+    console.log("hello class");
+    console.log("you are welcome");
+}
+myfunction()
+
+function greet(name = " user", age = 18) {
+    console.log("JS hard chaii" + name + age);
+    console.log("God abeg" + name + age);
+}
+greet(" sorry", " 5");
+greet(" no vex")
+greet()
+
+//calculate the age of user (2023 - yearborn)
+function calcAge(year) {
+    const age = 2023 - year;
+    console.log(`your age is ${age}`);
+}
+calcAge(1960)
+calcAge(1990)
+
+function sumNums(a, b) {
+    console.log(`the sum of ${a} and ${b} is ${a + b}`);
+}
+sumNums(4.5, 78)
+sumNums(-45, 87)
+
+
+function decripCountry(country, population, capitalcity) {
+    console.log(`${country} has ${population} million people and its capital city is  ${capitalcity}`);
+}
+decripCountry("ghana", 7, "accra ")
+decripCountry("canada", 25, "toronto")
+decripCountry("amaerica", 100, "washington")
+
+//check if an email is valid or not
+function checkEmail(email) {
+    if (email.includes('@')) {
+        console.log(`${email} is a valid address`);
+    } else {
+        console.log(`${email} is not valid`);
+    }
+}
+checkEmail('olabayoayahoo.com')
+
+//HOISTING
+//function expresion
+const myAge = 90;
+console.log(myAge);
+
+//myfunction2 (4, 5)
+const myfunction2 = function (a, b) {
+    console.log("anything");
+    console.log(a + b);
+}
+myfunction2(7, 9)
+
+//return keyword
+const presh = function (a, b) {
+    return a * b
+}
+presh(9, 0)
+const test = presh(10, 10)
+console.log(test);
+
+//d- 103, 98, 89
+//k- 110, 87, 95
+const calcAverage = function (a, b, c) {
+    const avg = (a + b + c) / 3
+    return Number(avg.toFixed(2))
+}
+const avgDolphin2 = calcAverage(123, 98, 89);
+const avgKoala2 = calcAverage(110, 87, 95)
+console.log(avgDolphin2, avgKoala2);
+
+function checkWinner(teamA, teamB) {
+    if (teamA > teamB) {
+        console.log("first team won");
+    } else if (teamB > teamA) {
+        console.log("second team won");
+    } else {
+        console.log("no winner");
+    }
+}
+checkWinner(avgDolphin2, avgKoala2)
+
+
+
+
+
+
+//arrays
+//objects
+//asybchronous js
+//dom
+
+
+
+
+
+
+
+
+
 
 
 
