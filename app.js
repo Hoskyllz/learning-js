@@ -602,12 +602,159 @@ function checkWinner(teamA, teamB) {
 }
 checkWinner(avgDolphin2, avgKoala2)
 
+//arrow function  - const name = ()=> {}
+const logger = (a, b, c) => {
+    const total = a + b + c;
+    return total;
+}
+console.log(logger(4, 5, 7));
+
+const difference = (a, b) => a - b
+console.log(difference(67, 50));
+
+const calcAverage2 = (a, b, c) => {
+    const avg2 = (a + b + c) / 3;
+    return Number(avg.tofixed(2))
+}
+
+//variables scoping -global and local var
+
+const a = 5;
+console.log(a);
+
+const local = () => {
+    const a = 7
+    const b = 8
+    console.log(a);
+}
+local()
+
+console.log(a);
+
+
+//arrays [elements, elements, elements]
+const stud = ['ola', 'egbo', 90, null]
+console.log(stud);
+
+//array property and methods
+console.log(stud.length);
+//get element in array
+console.log(stud[2]);
+console.log(stud[stud.length - 1]);
+
+//coverting an array to a string
+console.log(stud.toString());
+console.log(stud.join("/"));
+
+//adding elements to an array- push and unshift
+stud.push('toyosi')
+stud.push('zainab')
+
+stud.unshift('precious')
+stud.unshift('500')
+console.log(stud);
+
+//removing elements from the array- pop  and shift
+console.log(stud.pop());
+stud.pop()
+stud.pop()
+
+stud.shift()
+stud.shift()
+console.log(stud);
+
+//sort arranges element alphabetically and reverse does the opposite
+console.log(stud.sort());
+console.log(stud.reverse());
+
+//includes
+console.log(stud.includes("adamu"));
+console.log(stud.includes(90));
+
+//indexOf lastindexOf
+const anotherStud = ["toyin", "ebuka"]
+console.log(stud.concat(anotherStud, ["you", "dey", "craze"]));
+
+//slice 
+console.log(stud.slice(0, 4));
+
+const county = ['alabama', 'orange', 'ozark', 'oneHill']
+console.log(county.length);
+if (county.length > 5) {
+    console.log("true");
+} else {
+    console.log('false');
+}
+
+
+let savings = 50000
+const transactions = [5000, -10000, -100]
+transactions.push(-2000)
+transactions.push(50000)
+
+transactions.push(-3000)
+transactions.pop()
+console.log(transactions);
+let debit = 0
+let credit = 0
+
+for (i = 0; i < transactions.length; i++) {
+    console.log(transactions[i]);
+    savings += transactions[i]
+    if (transactions[i] < 0) {
+        debit += transactions[i];
+        console.log(`you have been debited ${transactions[i]}`);
+    } else { credit += transactions[i]
+        console.log(`you have been credited ${transactions[i]}`);
+    }
+}
+console.log(`Sapa nice one total debit ${debit}`);
+console.log(`You get money total credit ${credit}`);
+console.log(`your available balance is ${savings}`);
+
+//includes, sort, pop, push, shift, unshift, slice, splice, concat, join, toString
+
+
+//filter, find, map, forEach
+//higher order function, call back function
+const frds = ["john", "jane", "adam", "jenny", "owen", "adamu"]
+frds.includes('ada')
+
+frds.forEach((frd) => {
+    console.log(`the name of my friend is ${frd}`);
+})
+frds.forEach((frd, index) => {
+    console.log(`${index} the name of my frd is ${frd}`);
+})
+
+//map
+frds.map((val, index) => {
+    console.log(index);
+    if (val === "owen" || val === "adamu") {
+        console.log(`${val} is my best friend`);
+    } else {
+        console.log(`${val} is just my friend`);
+    }
+})
+//filter find
+const filterFriends = frds.filter((frd) => {
+    return frd.startsWith ("j")
+}
+)
+console.log(filterFriends);
+
+const findFriends = frds.find((frd) => {
+    return frd.startsWith ("j")
+})
+console.log(findFriends);
+
+const rizz = frds.filter((frd) => frd.startsWith("a"))
+const rizz2 = frds.find((frd) => frd.startsWith("a"))
+const rizz3 = frds.filter((frd) => frd.length > 3 )
+console.log(rizz, rizz2, rizz3);
 
 
 
-
-
-//arrays
 //objects
 //asybchronous js
 //dom
