@@ -748,14 +748,176 @@ const findFriends = frds.find((frd) => {
 })
 console.log(findFriends);
 
-const rizz = frds.filter((frd) => frd.startsWith("a"))
+const rizz = frds.filter((frd) => frd.startsWith("j"))
 const rizz2 = frds.find((frd) => frd.startsWith("a"))
 const rizz3 = frds.filter((frd) => frd.length > 3 )
 console.log(rizz, rizz2, rizz3);
 
+//reduce accumulator
+const movement = [300, -50, 700, 400, -300]
+
+const total = movement.reduce((acc, val) => {
+    return acc + val
+}, 0)
+console.log(`your total bill is ${total}`);
 
 
-//objects
+//objects - properties, method {key:value}
+const user = {
+    firstName: 'john',
+    lastName: 'doe',
+    age: '70',
+    job: 'web developer',
+    friends: ['jane', 'mario', 'luigi']
+}
+console.log(user);
+
+//accessing properties from an object - dot notation or bracket
+console.log(user.firstName.toUpperCase());
+console.log(user.age);
+//objName ['propertyName']
+console.log(user['friends'].includes('steve'));
+console.log(user['friends']);
+const nameKey = "Name"
+console.log(user["last" + nameKey]);
+
+//Adding properties to an object
+user, hasACar = true
+user.status = "married"
+console.log(user);
+
+//remove properties - delete.
+delete user.friends
+console.log(user);
+
+const book = {
+    tittle: 'Rich dad poor dad',
+    author: 'Robert Kiyoski',
+    yearr: 2001,
+    pages: 207,
+    similarBooks: [
+        'richest man in babylon',
+        'the monk who sold his ferrari',
+        'think and grow'
+    ],
+    publisher: 'Macmillan',
+    getSummary: function () {
+        
+        return `the title of the book is ${this.tittle} written by ${this.author} in the year ${this.yearr}`
+        
+    }
+}
+console.log(book);
+
+//object methods
+
+  console.log(book.getSummary()); 
+
+
+console.log(this);
+
+//object destructuring
+//const{propertyNames} = objName
+
+const { publisher, author, pages, yearr } = book
+console.log(publisher);
+//more example
+const users = [
+    { name: "john", userName: "john@35wuw", password: "353i2y7ewte36t3", age: 32 },
+    { name: "jane", userName: "jane#610w", password: "753i2yt3nsihsg", age: 17 },
+    { name: "mario", userName: "masB35w56", password: "453i2dbejtwge", age: 46 },
+    { name: "kerry", userName: "Jnon12345", password: "953i2j34742ioeyu", age: 16 } ,
+   
+]
+const canView = users.filter((user) => {
+    return user.age >= 18
+})
+console.log(canView);
+
+const search = users.filter((user) => {
+    return user.name.includes ('a') || user.userName.includes ('a')
+})
+console.log(search);
+
+//rest (left side) and spread (right side) operator and written with 3 dots ...
+
+const booked = {
+    tittle: 'Rich dad poor dad',
+    author: 'Robert Kiyoski',
+    yearrr: 2001,
+    pages: 207,
+    similarBooks: [
+        'richest man in babylon',
+        'the monk who sold his ferrari',
+        'think and grow'
+    ],
+    published: 'Macmillan',
+    getSummary: function () {
+        
+        return `the title of the book is ${this.tittle} written by ${this.author} in the year ${this.yearrr}`
+        
+    }
+}
+const {published, tittle, ...all} = booked
+
+console.log(all);
+
+const ages = [32, 54, 16, 65, 89]
+const newAge = [2, ...ages, 76, 80]
+
+const [...rest] = ages;
+console.log(rest);
+console.log(newAge);
+
+//MATH OBJECT - 8 math constant
+//console.log(Math.PI);
+
+//math methods
+//sqrt, trunc, round, random, ceil, floor
+console.log(Math.sqrt(65789));
+console.log(Math.trunc(9.763532));
+console.log(Math.round(78.78)); //aproximate the number after decimal point and adds it
+console.log(Math.ceil(10.1));// add the number after decimal point +1
+console.log(Math.floor(6.9)); //adds +0 after decimal point
+
+console.log(Math.random());
+console.log(Math.random() * 2 + 1);
+
+console.log(Math.trunc(Math.random() * 6));
+
+const computer = ["rock", "paper", "scisors"]
+const randomNum = Math.trunc(Math.random() * 3)
+const computerChoice = computer[randomNum]
+
+//console.log(randomChoice);
+const playerChoice = prompt("enter a choice (rock, paper, scissors): ")
+const checkWin = function (computer, player) {
+    if (computer === player) {
+        return "this is a tie"
+    } else if (player === "rock") {
+        if (computer === "scissors") {
+            return "rock smashes scissors, you win!"
+        } else {
+            return "paper covers rock, you lose!"
+        }
+    } else if (player === "paper") {
+        if (computer === "rock") {
+            return "paper covers rock, you win!"
+        } else {
+            return "scissors cut paper, you lose" 
+        }
+    } else if (player === "scissors") {
+        if (computer === "paper") {
+            return "scissors cut paper, you win"
+        } else {
+            return "rock smashes scissors, ypu lose"
+        }
+    }
+}
+const result = checkWin(computerChoice, playerChoice)
+console.log(result);
+
+
 //asybchronous js
 //dom
 
