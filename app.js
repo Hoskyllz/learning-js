@@ -885,40 +885,118 @@ console.log(Math.random() * 2 + 1);
 
 console.log(Math.trunc(Math.random() * 6));
 
-const computer = ["rock", "paper", "scisors"]
-const randomNum = Math.trunc(Math.random() * 3)
-const computerChoice = computer[randomNum]
+// const computer = ["rock", "paper", "scisors"]
+// const randomNum = Math.trunc(Math.random() * 3)
+// const computerChoice = computer[randomNum]
 
-//console.log(randomChoice);
-const playerChoice = prompt("enter a choice (rock, paper, scissors): ")
-const checkWin = function (computer, player) {
-    if (computer === player) {
-        return "this is a tie"
-    } else if (player === "rock") {
-        if (computer === "scissors") {
-            return "rock smashes scissors, you win!"
-        } else {
-            return "paper covers rock, you lose!"
-        }
-    } else if (player === "paper") {
-        if (computer === "rock") {
-            return "paper covers rock, you win!"
-        } else {
-            return "scissors cut paper, you lose" 
-        }
-    } else if (player === "scissors") {
-        if (computer === "paper") {
-            return "scissors cut paper, you win"
-        } else {
-            return "rock smashes scissors, ypu lose"
-        }
+// //console.log(randomChoice);
+// const playerChoice = prompt("enter a choice (rock, paper, scissors): ")
+// const checkWin = function (computer, player) {
+//     if (computer === player) {
+//         return "this is a tie"
+//     } else if (player === "rock") {
+//         if (computer === "scissors") {
+//             return "rock smashes scissors, you win!"
+//         } else {
+//             return "paper covers rock, you lose!"
+//         }
+//     } else if (player === "paper") {
+//         if (computer === "rock") {
+//             return "paper covers rock, you win!"
+//         } else {
+//             return "scissors cut paper, you lose"
+//         }
+//     } else if (player === "scissors") {
+//         if (computer === "paper") {
+//             return "scissors cut paper, you win"
+//         } else {
+//             return "rock smashes scissors, ypu lose"
+//         }
+//     }
+// }
+// const result = checkWin(computerChoice, playerChoice)
+// console.log(result);
+
+
+//asybchronous js it means a non blocking code
+//setTimeout(()=>{}) and setInterval(()=>{})
+
+console.log("first");
+// setTimeout(() => {
+//     console.log("second");
+// }, 15000)
+// const myInterval = setInterval(() => {
+//     console.log("i am in the interval");
+// }, 2000)
+
+// setTimeout(() => {
+//     clearInterval(myInterval)
+// }, 10000)
+
+console.log("third");
+
+//fetching data - APIs- application programming interface (same)
+//JSON - javascript object notation
+//data - array
+
+
+const url = "https://jsonplaceholder.typicode.com/users"
+
+//fetch
+// fetch(url).then((response) => {
+//     return response.json()
+// })
+//     .then((data) => {
+//     console.log(data);
+// })
+
+const fetchData = (site) => {
+    fetch(site)
+        .then((res) => res.json())
+        .then((data) => console.log(data))
+        .catch((err) => {
+        console.log(err);
+    })
+}
+fetchData(url)
+fetchData("https://jsonplaceholder.typicode.com/posts")
+
+
+//async / await (same)
+const getData = async (site) => {
+    try {
+        const response = await fetch(site);
+        const data = await response.json()
+        console.log(data);
+    } catch (error) {
+        console.log(error);
     }
 }
-const result = checkWin(computerChoice, playerChoice)
+getData("https://jsonplaceholder.typicode.com/todos")
+
+
+//try and catch block
+try {
+    console.log(rwtysd);
+} catch (error) {
+    console.log(error);
+}
+
+//storage api
+//local storage -setItem, getItem, removeItem, clear, lenght
+localStorage.setItem("name", "ola ola")
+localStorage.setItem("token", "3526252277")
+
+const result = localStorage.getItem("name")
 console.log(result);
 
+localStorage.removeItem("token")
 
-//asybchronous js
+const len = localStorage.length;
+console.log(len);
+
+//localStorage.clear()
+
 //dom
 
 
